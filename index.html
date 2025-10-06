@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Guessing Game</title>
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+  </head>
+    
+  <body>
+  <div id='app'>
+  <div id='mainPanel'>
+    <div id='gamePanel' class='fullPanel'>
+      <div id='titlePanel'>
+        <h1 id='title'>Guessing Game</h1>
+      </div>
+      <div id='focusPanel'>
+        <div id='guessPanel' class='cardPanel'>
+          <div id='guessBox'>
+            <input id='guessInput' class='spinner tooltip' title='current guess' />
+          </div>
+          <div id='guessButtonBox' class='topButtonBox'>
+            <button id='btnGuess' class='control buttonBase buttonEffects' title='Enter your guess. Hotkey G'>Guess [G]</button>
+          </div>
+          <div id='newButtonBox' class='topButtonBox'>
+
+            <button id='btnNew' class='control buttonBase buttonEffects' title="New number. Hotkey N">New [N]</button>
+          </div>
+        </div>
+        <div id='feedbackPanel' class='flexCol'>
+          <div id='mostRecentGuessPanel' class='flexRow'>
+            <div id='mostRecentGuess' class='flexRow'></div>
+          </div>
+          <div id='guessHistoryPanel' class='flexRow'>
+            <div id='guessHistory' class='flexRow'></div>
+          </div>
+          <div id='guessHistoryHider' class='hide hider'>?</div>
+          <div id='longtermFeedbackPanel' class='flexRow'>
+            <div id='longtermFeedback'></div>
+          </div>
+          <div id='longtermFeedbackHider' class='hide hider'>?</div>
+          <div id='nGuessesPanel' class='flexRow'>
+            <div id='nGuesses'>0</div> / <div id='nMaxGuesses'>6</div> guesses used
+          </div>
+        </div>
+      </div>
+
+      <div id='sliderPanel'>
+        <label for='secretMin' class='spinnerLabel'>between</label> <input id='secretMin' class='spinner tooltip' title='lower bound' />
+        <label for='secretMax' class='spinnerLabel'>and</label><input id='secretMax' class='spinner tooltip' title='upper bound' />
+        <label class='spinnerLabel'>inclusive</label>
+      </div>
+
+    </div>
+    <div id="helpPanel" class="hide fullPanel verticalPanel overlayPanel">
+      <div id="helpContent" class="panelContent">
+        <h1>Help</h1>
+        <hr />
+        <p><strong>Guess the Number</strong> is simple guessing game of a number between two values.</p>
+        <p>The number of guesses is automatically determined based on the number of bits of entropy established by the range and the binary search strategy...</p>
+      </div>
+    </div>
+  </div>
+  <div id='footer'>
+    <div id='footerContent'>
+      <div class='footerBlock' id='footerLeft'>
+        <div id='resetButtonContainer'><button id='btnReset' class='buttonBase buttonEffects buttonFooter' title='Remove uploaded data'>Reset [Z]</button></div>
+      </div>
+      <div class='footerBlock' id='footerRight'>
+        <div id='helpButtonContainer'>
+          <button id='btnHelp' class='buttonBase buttonEffects buttonFooter' title='Show/hide help panel. Hotkey H'>Help [H]</button>
+        </div>
+        <div id="copyrightContainer">
+          <div id="copyright">© 2025 <a href="https://sawczak.com">Luke Sawczak</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+  <script src='https://g.sawczak.com/web-tools/js/app-tools.js'></script>
+  <script src='https://g.sawczak.com/web-tools/js/jquery-ui-options.js'></script>
+  <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
